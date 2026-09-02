@@ -1,114 +1,602 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="LIS RPG — Modpack RPG para Minecraft 1.20.1 Fabric.">
+  <meta name="theme-color" content="#111512">
+
   <title>LIS RPG — Minecraft 1.20.1</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- =========================
+       NAVEGACIÓN
+  ========================== -->
+
   <header class="nav">
     <a class="brand" href="#inicio">🌸 LIS RPG</a>
-    <nav>
-      <a href="#caracteristicas">Características</a>
-      <a href="#descarga">Descarga</a>
-      <a href="#instalacion">Instalación</a>
-      <a href="#apoyo">Apoyar</a>
-    </nav>
+
+```
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#caracteristicas">Características</a>
+  <a href="#descargas">Descargas</a>
+  <a href="#noticias">Noticias</a>
+  <a href="#instalacion">Instalación</a>
+  <a href="#donaciones">Donaciones</a>
+  <a href="#discord">Discord</a>
+</nav>
+```
+
   </header>
 
   <main>
-    <section id="inicio" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="eyebrow">MINECRAFT 1.20.1 • FABRIC</div>
-        <h1>LIS RPG</h1>
-        <p class="edition">JAVA EDITION</p>
-        <p class="tagline">Tu aventura. Tu historia. Tu leyenda.</p>
-        <a class="button primary" href="#descarga">⬇ Descargar LIS RPG</a>
-        <p class="small">Versión 1.0.0 • 200 mods</p>
-      </div>
-    </section>
 
-    <section id="caracteristicas" class="section">
-      <div class="section-heading">
-        <span>LA AVENTURA COMIENZA</span>
-        <h2>¿Qué es LIS RPG?</h2>
-        <p>Un modpack de Minecraft 1.20.1 Fabric pensado para convertir el mundo en una experiencia RPG de exploración, combate y aventura.</p>
+```
+<!-- =========================
+     HERO / INICIO
+========================== -->
+
+<section id="inicio" class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      MINECRAFT 1.20.1 • FABRIC
+    </div>
+
+    <h1>LIS RPG</h1>
+
+    <p class="edition">
+      JAVA EDITION
+    </p>
+
+    <p class="tagline">
+      Tu aventura. Tu historia. Tu leyenda.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a class="button primary" href="#descargas">
+        ⬇ Descargar LIS RPG
+      </a>
+
+      <a class="button secondary" href="#discord">
+        💬 Discord
+      </a>
+
+    </div>
+
+    <p class="small">
+      Versión 1.0.0 • 200+ mods
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CARACTERÍSTICAS
+========================== -->
+
+<section id="caracteristicas" class="section">
+
+  <div class="section-heading">
+
+    <span>
+      LA AVENTURA COMIENZA
+    </span>
+
+    <h2>
+      ¿Qué es LIS RPG?
+    </h2>
+
+    <p>
+      Un modpack de Minecraft 1.20.1 Fabric pensado para convertir
+      el mundo en una experiencia RPG de exploración, combate y aventura.
+    </p>
+
+  </div>
+
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="icon">⚔️</div>
+
+      <h3>
+        200+ mods
+      </h3>
+
+      <p>
+        Una experiencia cargada de contenido, mejoras, enemigos,
+        estructuras y sistemas RPG.
+      </p>
+    </article>
+
+
+    <article class="card">
+      <div class="icon">🗺️</div>
+
+      <h3>
+        Exploración
+      </h3>
+
+      <p>
+        Descubrí nuevas estructuras, biomas, lugares y secretos
+        mientras recorrés el mundo.
+      </p>
+    </article>
+
+
+    <article class="card">
+      <div class="icon">✨</div>
+
+      <h3>
+        Progresión RPG
+      </h3>
+
+      <p>
+        Habilidades, equipo, combate y sistemas pensados para
+        que tu personaje evolucione.
+      </p>
+    </article>
+
+
+    <article class="card">
+      <div class="icon">🌸</div>
+
+      <h3>
+        Una identidad propia
+      </h3>
+
+      <p>
+        Un estilo visual inspirado en los cerezos, la fantasía
+        y la aventura.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DESCARGAS
+========================== -->
+
+<section id="descargas" class="section downloads-section">
+
+  <div class="section-heading">
+
+    <span>
+      EMPEZÁ TU AVENTURA
+    </span>
+
+    <h2>
+      Descargas
+    </h2>
+
+    <p>
+      Descargá la última versión disponible de LIS RPG.
+    </p>
+
+  </div>
+
+
+  <div class="download-grid">
+
+    <article class="download-card featured">
+
+      <div class="download-icon">
+        🎮
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <div class="icon">⚔️</div>
-          <h3>200+ mods</h3>
-          <p>Una experiencia cargada de contenido, mejoras, enemigos, estructuras y sistemas RPG.</p>
-        </article>
-        <article class="card">
-          <div class="icon">🗺️</div>
-          <h3>Exploración</h3>
-          <p>Descubrí nuevas estructuras, biomas, lugares y secretos mientras recorrés el mundo.</p>
-        </article>
-        <article class="card">
-          <div class="icon">✨</div>
-          <h3>Progresión RPG</h3>
-          <p>Habilidades, equipo, combate y sistemas pensados para que tu personaje evolucione.</p>
-        </article>
-        <article class="card">
-          <div class="icon">🌸</div>
-          <h3>Una identidad propia</h3>
-          <p>Un estilo visual inspirado en los cerezos, la fantasía y la aventura.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="descarga" class="download section">
       <div>
-        <span class="section-label">ÚLTIMA VERSIÓN</span>
-        <h2>LIS RPG <b>1.0.0</b></h2>
-        <p>Fabric 1.20.1 • 200 mods</p>
-        <p class="muted">El botón de abajo está preparado para enlazar tu ZIP final.</p>
-      </div>
-      <a class="button primary big" href="#" onclick="downloadPlaceholder(event)">⬇ Descargar modpack</a>
-    </section>
 
-    <section id="instalacion" class="section">
-      <div class="section-heading">
-        <span>EMPEZÁ EN MINUTOS</span>
-        <h2>Instalación</h2>
-      </div>
-      <div class="steps">
-        <div><strong>01</strong><p>Descargá el ZIP de LIS RPG.</p></div>
-        <div><strong>02</strong><p>Instalá Minecraft Java 1.20.1 con Fabric.</p></div>
-        <div><strong>03</strong><p>Copiá las carpetas <code>mods</code>, <code>shaderpacks</code>, <code>resourcepacks</code> y <code>config</code> a tu instalación de Minecraft.</p></div>
-        <div><strong>04</strong><p>Iniciá Minecraft y disfrutá LIS RPG.</p></div>
-      </div>
-    </section>
+        <span class="version">
+          VERSIÓN ACTUAL
+        </span>
 
-    <section id="apoyo" class="support section">
-      <div class="support-box">
-        <div>
-          <span class="section-label">❤️ APOYÁ EL PROYECTO</span>
-          <h2>¿Te gusta LIS RPG?</h2>
-          <p>Tu apoyo ayuda a mantener y mejorar el proyecto.</p>
-        </div>
-        <a class="button gold" href="#" onclick="donatePlaceholder(event)">❤️ Donar</a>
+        <h3>
+          LIS RPG 1.0.0
+        </h3>
+
+        <p>
+          Minecraft Java Edition 1.20.1
+        </p>
+
+        <p class="muted">
+          Fabric • 200+ mods
+        </p>
+
       </div>
-      <p class="notice">El botón de donación es un marcador. Cuando tengas tu enlace de donación, reemplazaremos este enlace por el definitivo.</p>
-    </section>
+
+      <!-- REEMPLAZAR # POR EL LINK REAL DEL ZIP -->
+
+      <a
+        class="button primary"
+        href="#"
+        onclick="downloadPlaceholder(event)"
+      >
+        ⬇ Descargar
+      </a>
+
+    </article>
+
+
+    <article class="download-card">
+
+      <div class="download-icon">
+        📋
+      </div>
+
+      <h3>
+        Lista de mods
+      </h3>
+
+      <p>
+        Próximamente podrás consultar todos los mods
+        incluidos en LIS RPG.
+      </p>
+
+      <button
+        class="button secondary"
+        onclick="showMessage('La lista de mods estará disponible próximamente.')"
+      >
+        Ver lista
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     NOTICIAS
+========================== -->
+
+<section id="noticias" class="section">
+
+  <div class="section-heading">
+
+    <span>
+      NOVEDADES
+    </span>
+
+    <h2>
+      Noticias
+    </h2>
+
+    <p>
+      Todas las novedades y actualizaciones de LIS RPG.
+    </p>
+
+  </div>
+
+
+  <div class="news-grid">
+
+    <article class="news-card">
+
+      <div class="news-date">
+        01 SEP 2026
+      </div>
+
+      <h3>
+        🌸 Bienvenidos a LIS RPG
+      </h3>
+
+      <p>
+        La página oficial de LIS RPG ya está en funcionamiento.
+        Próximamente habrá nuevas versiones, contenido y novedades
+        para la comunidad.
+      </p>
+
+      <span class="news-tag">
+        LANZAMIENTO
+      </span>
+
+    </article>
+
+
+    <article class="news-card">
+
+      <div class="news-date">
+        PRÓXIMAMENTE
+      </div>
+
+      <h3>
+        ⚔️ Nueva actualización
+      </h3>
+
+      <p>
+        Estamos preparando nuevas mejoras, contenido RPG,
+        estructuras y cambios para futuras versiones.
+      </p>
+
+      <span class="news-tag">
+        DESARROLLO
+      </span>
+
+    </article>
+
+
+    <article class="news-card">
+
+      <div class="news-date">
+        PRÓXIMAMENTE
+      </div>
+
+      <h3>
+        🗺️ Nuevas aventuras
+      </h3>
+
+      <p>
+        Nuevas zonas, desafíos y secretos llegarán al mundo
+        de LIS RPG.
+      </p>
+
+      <span class="news-tag">
+        PRÓXIMAMENTE
+      </span>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     INSTALACIÓN
+========================== -->
+
+<section id="instalacion" class="section">
+
+  <div class="section-heading">
+
+    <span>
+      EMPEZÁ EN MINUTOS
+    </span>
+
+    <h2>
+      Instalación
+    </h2>
+
+    <p>
+      Prepará Minecraft y comenzá tu aventura.
+    </p>
+
+  </div>
+
+
+  <div class="steps">
+
+    <div>
+      <strong>01</strong>
+
+      <h3>
+        Descargá
+      </h3>
+
+      <p>
+        Descargá el ZIP de LIS RPG desde la sección de descargas.
+      </p>
+    </div>
+
+
+    <div>
+      <strong>02</strong>
+
+      <h3>
+        Instalá Fabric
+      </h3>
+
+      <p>
+        Instalá Minecraft Java 1.20.1 con Fabric Loader.
+      </p>
+    </div>
+
+
+    <div>
+      <strong>03</strong>
+
+      <h3>
+        Copiá los archivos
+      </h3>
+
+      <p>
+        Colocá las carpetas
+        <code>mods</code>,
+        <code>shaderpacks</code>,
+        <code>resourcepacks</code>
+        y
+        <code>config</code>
+        en tu instalación de Minecraft.
+      </p>
+    </div>
+
+
+    <div>
+      <strong>04</strong>
+
+      <h3>
+        ¡A jugar!
+      </h3>
+
+      <p>
+        Iniciá Minecraft, seleccioná Fabric 1.20.1
+        y disfrutá LIS RPG.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DONACIONES
+========================== -->
+
+<section id="donaciones" class="support section">
+
+  <div class="support-box">
+
+    <div>
+
+      <span class="section-label">
+        ❤️ APOYÁ EL PROYECTO
+      </span>
+
+      <h2>
+        ¿Te gusta LIS RPG?
+      </h2>
+
+      <p>
+        Tu apoyo ayuda a mantener y mejorar el proyecto,
+        agregar contenido y seguir desarrollando nuevas versiones.
+      </p>
+
+    </div>
+
+
+    <!-- REEMPLAZAR # POR EL LINK REAL DE DONACIONES -->
+
+    <a
+      class="button gold"
+      href="#"
+      onclick="donatePlaceholder(event)"
+    >
+      ❤️ Donar
+    </a>
+
+  </div>
+
+
+  <p class="notice">
+    El sistema de donaciones estará disponible próximamente.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     DISCORD
+========================== -->
+
+<section id="discord" class="section discord-section">
+
+  <div class="discord-box">
+
+    <div class="discord-icon">
+      💬
+    </div>
+
+    <div>
+
+      <span class="section-label">
+        COMUNIDAD
+      </span>
+
+      <h2>
+        Unite al Discord
+      </h2>
+
+      <p>
+        Unite a la comunidad de LIS RPG para compartir aventuras,
+        encontrar jugadores, recibir novedades y hablar sobre el modpack.
+      </p>
+
+    </div>
+
+
+    <!-- REEMPLAZAR # POR EL LINK REAL DE DISCORD -->
+
+    <a
+      class="button discord-button"
+      href="#"
+      onclick="discordPlaceholder(event)"
+    >
+      💬 Unirme a Discord
+    </a>
+
+  </div>
+
+</section>
+```
+
   </main>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    <div class="footer-brand">🌸 LIS RPG</div>
-    <div class="socials">
-      <a href="#" onclick="placeholder(event, 'YouTube')">YouTube</a>
-      <a href="#" onclick="placeholder(event, 'TikTok')">TikTok</a>
-      <a href="#" onclick="placeholder(event, 'Discord')">Discord</a>
-      <a href="#" onclick="placeholder(event, 'Instagram')">Instagram</a>
-    </div>
-    <p>© LIS RPG • Proyecto independiente • No afiliado con Mojang Studios.</p>
+
+```
+<div class="footer-brand">
+  🌸 LIS RPG
+</div>
+
+<p class="footer-description">
+  Tu aventura. Tu historia. Tu leyenda.
+</p>
+
+
+<div class="socials">
+
+  <a
+    href="#"
+    onclick="placeholder(event, 'YouTube')"
+  >
+    YouTube
+  </a>
+
+  <a
+    href="#"
+    onclick="placeholder(event, 'TikTok')"
+  >
+    TikTok
+  </a>
+
+  <a
+    href="#discord"
+  >
+    Discord
+  </a>
+
+  <a
+    href="#"
+    onclick="placeholder(event, 'Instagram')"
+  >
+    Instagram
+  </a>
+
+</div>
+
+
+<p>
+  © LIS RPG • Proyecto independiente •
+  No afiliado con Mojang Studios.
+</p>
+```
+
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
