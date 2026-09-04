@@ -62,3 +62,12 @@ showMessage(
 "Acá pondremos el enlace de invitación de tu servidor de Discord."
 );
 }
+
+// =========================
+// INICIAR CONTADOR
+// =========================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  updateDownloadCount
+);
