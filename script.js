@@ -133,3 +133,7 @@ async function updateDownloadCount() {
     counter.textContent = "No disponible";
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  updateDownloadCount();
+});
+
