@@ -67,6 +67,11 @@ showMessage(
 // CONTADOR DE DESCARGAS
 // =========================
 
+```js
+// =========================
+// CONTADOR DE DESCARGAS
+// =========================
+
 async function updateDownloadCount() {
 
   const counter = document.getElementById("download-count");
@@ -83,7 +88,7 @@ async function updateDownloadCount() {
   try {
 
     const apiURL =
-      "https://api.github.com/repos/manriquelisandro87-tech/LIS-RPG/releases/tags/v0.2.0";
+      "https://api.github.com/repos/manriquelisandro87-tech/LIS-RPG/releases?per_page=100";
 
     const response = await fetch(apiURL, {
       headers: {
@@ -98,30 +103,29 @@ async function updateDownloadCount() {
       );
     }
 
-    const release = await response.json();
+    const releases = await response.json();
 
-    // Buscar nuestro archivo ZIP
-    const asset = release.assets.find(
-      file => file.name === "LIS.RPG.0.2.0.zip"
-    );
+    let totalDownloads = 0;
 
-    if (!asset) {
-      throw new Error(
-        "No se encontró LIS.RPG.0.2.0.zip en la Release."
-      );
-    }
+    // Recorrer todas las versiones
+    for (const release of releases) {
 
-    // download_count es el contador real de GitHub
-    const downloads = Number(asset.download_count);
+      // Recorrer los archivos de cada Release
+      for (const asset of release.assets) {
 
-    if (!Number.isFinite(downloads)) {
-      throw new Error(
-        "GitHub no devolvió un contador válido."
-      );
+        // Solo contar los ZIP del modpack
+        if (
+          asset.name.startsWith("LIS.RPG.") &&
+          asset.name.endsWith(".zip")
+        ) {
+          totalDownloads += Number(asset.download_count) || 0;
+        }
+
+      }
     }
 
     counter.textContent =
-      downloads.toLocaleString("es-AR");
+      totalDownloads.toLocaleString("es-AR");
 
   } catch (error) {
 
@@ -133,7 +137,8 @@ async function updateDownloadCount() {
     counter.textContent = "No disponible";
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   updateDownloadCount();
 });
-
+```
