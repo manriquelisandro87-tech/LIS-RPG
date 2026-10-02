@@ -105,7 +105,7 @@ async function updateDownloadCount() {
     /*
       DESCARGAS HISTÓRICAS
 
-      Antes de actualizar el ZIP tenías 2 descargas.
+      Antes de actualizar el ZIP tenías 8 descargas.
       Como GitHub reinició el contador del asset al
       reemplazarlo, las conservamos manualmente acá.
 
