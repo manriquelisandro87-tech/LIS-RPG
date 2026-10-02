@@ -1,4 +1,3 @@
-```js
 /*
 LIS RPG
 Funciones de la página
@@ -174,4 +173,3 @@ document.addEventListener(
   "DOMContentLoaded",
   updateDownloadCount
 );
-```
