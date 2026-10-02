@@ -17,7 +17,6 @@ function showMessage(message) {
 // =========================
 
 function placeholder(event, name) {
-
   event.preventDefault();
 
   showMessage(
@@ -30,7 +29,6 @@ function placeholder(event, name) {
 // =========================
 
 function downloadPlaceholder(event) {
-
   event.preventDefault();
 
   showMessage(
@@ -43,7 +41,6 @@ function downloadPlaceholder(event) {
 // =========================
 
 function donatePlaceholder(event) {
-
   event.preventDefault();
 
   showMessage(
@@ -56,7 +53,6 @@ function donatePlaceholder(event) {
 // =========================
 
 function discordPlaceholder(event) {
-
   event.preventDefault();
 
   showMessage(
@@ -72,27 +68,25 @@ async function updateDownloadCount() {
 
   const counter = document.getElementById("download-count");
 
-  // Si el contador no existe en el HTML,
-  // no hacemos nada.
   if (!counter) {
+    console.error("No existe #download-count en index.html");
     return;
   }
 
-  // Mostrar estado inicial
   counter.textContent = "Cargando...";
 
   try {
 
-    // GitHub API: obtener todas las Releases
-    const apiURL =
-      "https://api.github.com/repos/manriquelisandro87-tech/LIS-RPG/releases?per_page=100";
-
-    const response = await fetch(apiURL, {
-      headers: {
-        "Accept": "application/vnd.github+json"
-      },
-      cache: "no-store"
-    });
+    const response = await fetch(
+      "https://api.github.com/repos/manriquelisandro87-tech/LIS-RPG/releases",
+      {
+        method: "GET",
+        headers: {
+          "Accept": "application/vnd.github+json"
+        },
+        cache: "no-store"
+      }
+    );
 
     if (!response.ok) {
       throw new Error(
@@ -102,74 +96,82 @@ async function updateDownloadCount() {
 
     const releases = await response.json();
 
-    /*
-      DESCARGAS HISTÓRICAS
+    console.log("Releases encontradas:", releases);
 
-      Antes de actualizar el ZIP tenías 8 descargas.
-      Como GitHub reinició el contador del asset al
-      reemplazarlo, las conservamos manualmente acá.
+    // Descargas que ya existían antes de reemplazar el ZIP
+    const historicalDownloads = 2;
 
-      IMPORTANTE:
-      Si en algún momento cambiás este número,
-      modificá solamente esta línea.
-    */
-    const historicalDownloads = 8;
-
-    // Contador de descargas actuales de GitHub
     let githubDownloads = 0;
 
-    // Recorrer todas las Releases
-    for (const release of releases) {
+    // Recorrer todas las versiones
+    releases.forEach(release => {
 
-      // Recorrer los archivos de cada Release
-      for (const asset of release.assets) {
+      console.log(
+        "Revisando release:",
+        release.tag_name
+      );
 
-        /*
-          Solo contar los ZIP de LIS RPG.
+      // Recorrer archivos de cada versión
+      release.assets.forEach(asset => {
 
-          Ejemplos:
-          LIS.RPG.0.2.0.zip
-          LIS.RPG.0.3.0.zip
-          LIS.RPG.1.0.0.zip
-        */
+        console.log(
+          "Archivo:",
+          asset.name,
+          "Descargas:",
+          asset.download_count
+        );
+
+        // Contar solamente ZIP de LIS RPG
         if (
           asset.name.startsWith("LIS.RPG.") &&
-          asset.name.endsWith(".zip")
+          asset.name.toLowerCase().endsWith(".zip")
         ) {
 
-          const downloads = Number(asset.download_count);
-
-          if (Number.isFinite(downloads)) {
-            githubDownloads += downloads;
-          }
+          githubDownloads +=
+            Number(asset.download_count) || 0;
         }
-      }
-    }
+      });
+    });
 
-    // Total final
     const totalDownloads =
       historicalDownloads + githubDownloads;
 
-    // Mostrar número con formato argentino
     counter.textContent =
       totalDownloads.toLocaleString("es-AR");
+
+    console.log(
+      "Descargas históricas:",
+      historicalDownloads
+    );
+
+    console.log(
+      "Descargas actuales:",
+      githubDownloads
+    );
+
+    console.log(
+      "TOTAL:",
+      totalDownloads
+    );
 
   } catch (error) {
 
     console.error(
-      "Error obteniendo el contador de descargas:",
+      "ERROR DEL CONTADOR:",
       error
     );
 
-    counter.textContent = "No disponible";
+    counter.textContent = "Error";
+
   }
 }
 
 // =========================
-// INICIAR CONTADOR
+// INICIAR
 // =========================
 
-document.addEventListener("DOMContentLoaded", () => {
-  updateDownloadCount();
-});
+document.addEventListener(
+  "DOMContentLoaded",
+  updateDownloadCount
+);
 ```
